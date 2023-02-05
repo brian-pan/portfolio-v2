@@ -1,4 +1,4 @@
-import * as urls from "./assets/urls/urls.js";
+import * as urls from "./data/urls/urls.js";
 
 const personalProjectNames = [
   "dishGuru",
