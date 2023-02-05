@@ -15,20 +15,11 @@ const workProjectNames = [
   "featureFilter",
   "milestones",
 ];
-for (let name of personalProjectNames) {
-  if (document.querySelector(`#${name}LiveLink`)) {
-    document
-      .querySelector(`#${name}LiveLink`)
-      .setAttribute("href", urls[`${name}Live`]);
-    document
-      .querySelector(`#${name}GitHubLink`)
-      .setAttribute("href", urls[`${name}GitHub`]);
-  }
-}
-for (let name of workProjectNames) {
-  if (document.querySelector(`#${name}LiveLink`)) {
-    document
-      .querySelector(`#${name}LiveLink`)
-      .setAttribute("href", urls[`${name}Live`]);
-  }
+for (let name of personalProjectNames.concat(workProjectNames)) {
+  document
+    .querySelector(`#${name}LiveLink`)
+    ?.setAttribute("href", urls[`${name}Live`]);
+  document
+    .querySelector(`#${name}GitHubLink`)
+    ?.setAttribute("href", urls[`${name}GitHub`]);
 }
