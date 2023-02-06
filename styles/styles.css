@@ -1,3 +1,8 @@
 h1 {
   border: 1px solid red;
+}
+
+.project-content__tech-stacks span {
+  color: brown;
+  font-weight: 700;
 }/*# sourceMappingURL=styles.css.map */
