@@ -20,4 +20,22 @@ for (let project of allProjects) {
   document.querySelector(`#${project.camelCasedName}Wrapper`).appendChild(h3);
 }
 
-//
+//add tech stacks for each project
+for (let project of allProjects) {
+  const p = document.createElement("p");
+  p.classList.add("project__tech-stacks");
+  document.querySelector(`#${project.camelCasedName}Wrapper`).appendChild(p);
+  for (let el of project.stacks) {
+    const span = document.createElement("span");
+    span.classList.add("project__tech-stacks-name");
+    span.textContent = el;
+    const separator = document.createElement("span");
+    span.classList.add("project__tech-stacks-separator");
+    separator.textContent = " | ";
+    if (span.textContent === project.stacks.slice(-1).toString()) {
+      p.appendChild(span);
+    } else {
+      p.appendChild(span).after(separator);
+    }
+  }
+}
