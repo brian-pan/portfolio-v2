@@ -56,3 +56,26 @@ for (let project of allProjects) {
   }
   document.querySelector(`#${project.camelCasedName}Wrapper`).appendChild(ul);
 }
+
+//add urls to for each project
+for (let project of allProjects) {
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("project__links");
+  const liveLink = document.createElement("a");
+  liveLink.classList.add("project__link", "project__link--live");
+  liveLink.href = project.urlLive;
+  liveLink.target = "_blank";
+  liveLink.textContent = "View Live";
+  wrapper.appendChild(liveLink);
+  if (project.urlRepo) {
+    const repoLink = document.createElement("a");
+    repoLink.classList.add("project__link", "project__link--repo");
+    repoLink.href = project.urlRepo;
+    repoLink.target = "_blank";
+    repoLink.textContent = "GitHub";
+    wrapper.appendChild(repoLink);
+  }
+  document
+    .querySelector(`#${project.camelCasedName}Wrapper`)
+    .appendChild(wrapper);
+}

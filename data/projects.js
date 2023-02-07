@@ -16,6 +16,14 @@ export const projects = {
       urlRepo: "https://github.com/brian-pan/rock-paper-scissors-game",
       urlLive: "https://brian-pan.github.io/rock-paper-scissors-game/",
     },
+    {
+      name: "Trip Planner",
+      stacks: ["React.js", "TypeScript", "SCSS"],
+      description:
+        "A front-end app to help travelers plan their trip stops more intuitively using React, SCSS and TypeScript. Users are able to add step-by-step stops, choose their favorite/must-go place, and set any stop to be optional to go. Used TypeScript for faster debugging, more robust refactoring, and easier codebase management.",
+      urlLive: "/",
+      urlRepo: "https://github.com/brian-pan/trip-planner-app",
+    },
   ],
   work: [
     {
