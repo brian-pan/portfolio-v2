@@ -1,4 +1,4 @@
-import { projects } from "./data/projects.js";
+import { projects } from "./data/projects/projects.js";
 console.log(projects);
 
 const allProjects = projects.personal.concat(projects.work);
