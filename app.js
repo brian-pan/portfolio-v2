@@ -40,23 +40,6 @@ for (let project of allProjects) {
   }
 }
 
-//add description for each project
-for (let project of allProjects) {
-  const ul = document.createElement("ul");
-  ul.classList.add("project__description-list");
-  const points = project.description.split(".");
-  if (!points[points.length - 1]) {
-    points.pop();
-  }
-  for (let point of points) {
-    const li = document.createElement("li");
-    li.classList.add("project__description-list-item");
-    li.textContent = point + (point === points[points.length - 1] ? "." : ";");
-    ul.appendChild(li);
-  }
-  document.querySelector(`#${project.camelCasedName}Wrapper`).appendChild(ul);
-}
-
 //add urls to for each project
 for (let project of allProjects) {
   const wrapper = document.createElement("div");
@@ -78,4 +61,21 @@ for (let project of allProjects) {
   document
     .querySelector(`#${project.camelCasedName}Wrapper`)
     .appendChild(wrapper);
+}
+
+//add description for each project
+for (let project of allProjects) {
+  const ul = document.createElement("ul");
+  ul.classList.add("project__description-list");
+  const points = project.description.split(".");
+  if (!points[points.length - 1]) {
+    points.pop();
+  }
+  for (let point of points) {
+    const li = document.createElement("li");
+    li.classList.add("project__description-list-item");
+    li.textContent = point + (point === points[points.length - 1] ? "." : ";");
+    ul.appendChild(li);
+  }
+  document.querySelector(`#${project.camelCasedName}Wrapper`).appendChild(ul);
 }

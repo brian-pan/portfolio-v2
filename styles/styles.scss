@@ -1,11 +1,13 @@
+@import './reset/reset.scss';
 @import "./variables/variables.scss";
 
 // testing
-h1 {
-  border: 1px solid red;
-}
 
 .project-content__tech-stacks span {
   color: brown;
   font-weight: 700;
+}
+
+.project-wrapper {
+  border: 1px solid green;
 }
