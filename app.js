@@ -1,10 +1,9 @@
 import { projects } from "./data/projects/projects.js";
-console.log(projects);
+// console.log(projects);
 
 const allProjects = projects.personal.concat(projects.work);
 
 for (let project of allProjects) {
-
   //add camelCasedName to each project upon loading
   const words = project.name.split(" ");
   words[0] = words[0].toLowerCase();
@@ -14,9 +13,11 @@ for (let project of allProjects) {
   //create & append wrapper divs
   const infoWrapper = document.createElement('div')
   const descriptionWrapper = document.createElement('div')
+  infoWrapper.classList.add('project__info-wrapper');
+  descriptionWrapper.classList.add('project__description-wrapper')
   document.querySelector(`#${project.camelCasedName}Wrapper`).appendChild(infoWrapper);
   document.querySelector(`#${project.camelCasedName}Wrapper`).appendChild(descriptionWrapper);
-
+  // document.getElementById(`#${project.camelCasedName}Wrapper`).style.backgroundImage = `url('${project.camelCasedName}Image.png')`
   //create h3 for each project
   const h3 = document.createElement("h3");
   h3.classList.add("project__heading");
@@ -24,7 +25,7 @@ for (let project of allProjects) {
   h3.textContent = project.name;
   infoWrapper.appendChild(h3);
 
-//add tech stacks for each project
+  //add tech stacks for each project
   const p = document.createElement("p");
   p.classList.add("project__tech-stacks");
   document.querySelector(`#${project.camelCasedName}Wrapper`).appendChild(p);
@@ -43,7 +44,7 @@ for (let project of allProjects) {
   }
   infoWrapper.appendChild(p)
 
-//add urls to for each project
+  //add urls to for each project
   const wrapper = document.createElement("div");
   wrapper.classList.add("project__links");
   const liveLink = document.createElement("a");
@@ -62,7 +63,7 @@ for (let project of allProjects) {
   }
   infoWrapper.appendChild(wrapper);
 
-//add description for each project
+  //add description for each project
   const ul = document.createElement("ul");
   ul.classList.add("project__description-list");
   const points = project.description.split(".");
